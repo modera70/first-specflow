@@ -1,4 +1,5 @@
-﻿using TechTalk.SpecFlow;
+﻿using System;
+using TechTalk.SpecFlow;
 
 namespace SpecFlowProject1.Steps
 {
@@ -18,27 +19,27 @@ namespace SpecFlowProject1.Steps
         [Given("the first number is (.*)")]
         public void GivenTheFirstNumberIs(int number)
         {
-            Logger.Logger.Log($"Given {number}");
+            Console.WriteLine($"Given {number}");
         }
 
         [Given("the second number is (.*)")]
         public void GivenTheSecondNumberIs(int number)
         {
-            Logger.Logger.Log($"Given {number}");
+            Console.WriteLine($"Given {number}");
 
         }
 
         [When("the two numbers are added")]
         public void WhenTheTwoNumbersAreAdded()
         {
-            Logger.Logger.Log($"When");
+            Console.WriteLine($"When");
 
         }
 
         [Then("the result should be (.*)")]
         public void ThenTheResultShouldBe(int result)
         {
-            Logger.Logger.Log($"Then {result}");
+            Console.WriteLine($"Then {result}");
 
         }
     }

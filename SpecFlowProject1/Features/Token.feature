@@ -22,4 +22,4 @@ Scenario Outline: Get status successful code
 	Then the result statsu code should be <StatusCode>
 	Examples: 
 	| RequestSpecificationFile                             | StatusCode |
-	| Resources/RequestSpecifications/valid-token-req.json | 200        |
+	| Resources/RequestSpecifications/valid-token-req.json | 300        |

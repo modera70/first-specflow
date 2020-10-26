@@ -1,0 +1,16 @@
+{
+  "path": "/connect/token",
+  "method": "Post",
+  "headers": {
+
+  },
+  "parameters": {
+    "grant_type": "client_credentials",
+    "scope": "",
+    "client_id": "r38QvL6VRe6cLhBC2Peb9edkaC9gUHZi",
+    "client_secret": "2UvUvEhDYU9eLLGSiNhiRivCKdL7kZfw2z6qMj5k8ywu6Sfvvqnt"
+  },
+  "UrlSegments": {
+  }
+
+}

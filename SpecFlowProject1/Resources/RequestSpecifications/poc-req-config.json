@@ -1,0 +1,17 @@
+{
+  "path": "my-path",
+  "headers": {
+    "header1": 1,
+    "header2": "header2-value"
+  },
+  "parameters": {
+    "param1": true,
+    "param2": "param2-value"
+  },
+  "UrlSegments": {
+    "urSegment1": 1.2,
+    "urSegment2": "urSegment2-value"
+  },
+  "body": "my json"
+
+}

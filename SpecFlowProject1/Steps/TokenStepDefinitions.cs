@@ -1,6 +1,9 @@
 ﻿using FluentAssertions;
+using Gbm.Cash.AM.Accounts.Application.RegressionTest.Models;
+using Gbm.Cash.AM.Accounts.Application.RegressionTest.Utils;
 using RestSharp;
 using SpecFlowProject1.Requests;
+using SpecFlowProject1.Utils;
 using System;
 using TechTalk.SpecFlow;
 
@@ -51,14 +54,25 @@ namespace SpecFlowProject1.Steps
         [When(@"I make a POST request")]
         public void WhenIMakeAPOSTRequest()
         {
-            tokenRp = restClient.Execute(tokenRq.GetRestRequest());
+            tokenRp = restClient.Execute(tokenRq.GetRequestSpecification());
         }
-        
+
+        [Given(@"I have the token request specification '(.*)'")]
+        public void GivenIHaveTheTokenTRequestSpecification(string requestSpecificationFile)
+        {
+            tokenRq.RequestSpecification = JsonUtil.DeserializeObjectFromFile<RequestSpecification>(requestSpecificationFile);
+        }
+
+        [When(@"I make a the request")]
+        public void WhenIMakeATheRequest()
+        {
+            tokenRp = RestUtil.Execute("https://auth.stg-gbmapi.com", tokenRq.GetRequestSpecification());
+        }
+
         [Then(@"the result statsu code should be (.*)")]
         public void ThenTheResultStatsuCodeShouldBe(int statusCode)
         {
             tokenRp.StatusCode.Should().Be(statusCode);
-            string content = tokenRp.Content;
         }
     }
 }

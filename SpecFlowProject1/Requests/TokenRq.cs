@@ -10,6 +10,10 @@ namespace SpecFlowProject1.Requests
 {
     public class TokenRq : IRequest
     {
+        public TokenRq()
+        {
+            Console.WriteLine("Token Reques created");
+        }
         public string Url { get; set; }
         public string GrantType { get; set; }
         public string Scope { get; set; }

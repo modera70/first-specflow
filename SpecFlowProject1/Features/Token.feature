@@ -16,6 +16,7 @@ Scenario Outline: Get status successful code
 	| URL                                       | GrantType          | ClientID                         | ClientSecret                                         | StatusCode | Scope |
 	| https://auth.stg-gbmapi.com/connect/token | client_credentials | r38QvL6VRe6cLhBC2Peb9edkaC9gUHZi | 2UvUvEhDYU9eLLGSiNhiRivCKdL7kZfw2z6qMj5k8ywu6Sfvvqnt | 200        |       |
 
+	@api @other 
 	Scenario Outline: Get status successful code with req specification file
 	Given I have the token request specification '<RequestSpecificationFile>'
 	When I make a the request
